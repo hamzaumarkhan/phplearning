@@ -19,10 +19,6 @@
         $run_sql = mysqli_query($conn,$sql) or die("Error: " . mysqli_error($conn));
 
         while($rows = mysqli_fetch_array($run_sql)){
-            echo "<pre>";
-            print_r($rows);
-            echo "</pre>";
-            exit;
             echo '
                 <tr>
                     <td>'.$rows['id'].'</td>
