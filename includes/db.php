@@ -6,7 +6,7 @@
        $user = 'root';
    
        // Password
-       $password = 'root';
+       $password = '';
    
        // Database name
        $db = 'php_course';
@@ -16,11 +16,11 @@
 
        $conn = mysqli_connect ($server, $user, $password, $db) or die('try again in some minutes, please');
     
-       if($conn) {
-           echo "connection working";
-       } else {
-           echo "connection not working";
-       }
+    //    if($conn) {
+    //        echo "connection working";
+    //    } else {
+    //        echo "connection not working";
+    //    }
 
      
 

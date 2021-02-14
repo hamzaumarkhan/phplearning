@@ -1,3 +1,5 @@
+<?php include 'includes/db.php';?>
+
 <!Doctype html>
 <html>
     <head>
@@ -9,7 +11,7 @@
             <div class="row">
                 <h2>Submit Form</h2>
         
-                <form class="form-horizontal" role="form" method="postss" action="form_process.php">
+                <form class="form-horizontal" role="form" method="post" action="form_process.php">
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-2">Name</label>
                     <div class="col-sm-5">
@@ -42,10 +44,10 @@
                 <div class="form-group">
                     <label for="gender" class="control-label col-sm-2">Skills</label>
                     <div class="col-sm-5">
-                        <lable class="checkbox-inline"><input type="checkbox" name="skill1">HTML</lable>
-                        <lable class="checkbox-inline"><input type="checkbox" name="skill2">CSS</lable>
-                        <lable class="checkbox-inline"><input type="checkbox" name="skill3">PHP</lable>
-                        <lable class="checkbox-inline"><input type="checkbox" name="skill4">Javascript</lable>
+                        <lable class="checkbox-inline"><input type="checkbox" value="html" name="skill1">HTML</lable>
+                        <lable class="checkbox-inline"><input type="checkbox" value="css" name="skill2">CSS</lable>
+                        <lable class="checkbox-inline"><input type="checkbox" value="php" name="skill3">PHP</lable>
+                        <lable class="checkbox-inline"><input type="checkbox" value="javascript" name="skill4">Javascript</lable>
                     </div>
                 </div>
 
@@ -53,10 +55,23 @@
                     <label for="countries" class="control-label col-sm-2">Country</label>
                     <div class="col-sm-5">
                         <select class="form-control" id="countries" name="country" required>
-                            <option value="">Select your country</option>
+                            <?php 
+                                $sql = "SELECT * FROM country";
+                                $run_sql = mysqli_query($conn,$sql) or die("Error: " . mysqli_error($conn));
+        
+                                while($rows = mysqli_fetch_array($run_sql)){
+                                    echo '
+                                    <option value="'.$rows['nicename'].'">'.$rows['nicename'].'</option>                                    
+                                    ';
+                                }
+                            
+                            ?>
+
+
+                            <!-- <option value="">Select your country</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
-                            <option value="Albania">Albania</option>                                    
+                            <option value="Albania">Albania</option>                                     -->
                         </select>
                     </div>
                 </div>
