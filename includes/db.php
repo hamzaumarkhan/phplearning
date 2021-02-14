@@ -6,7 +6,7 @@
        $user = 'root';
    
        // Password
-       $password = 'root        ';
+       $password = 'root';
    
        // Database name
        $db = 'php_course';
