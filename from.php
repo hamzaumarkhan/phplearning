@@ -5,11 +5,11 @@
     </head>
     <body>
         <table border="1">
-            <thead>
+            <thead> 
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email Address</th>
-                <th>Gender</th>
+                <th>Gender</th> 
                 <th>Skills</th>
                 <th>Country</th>
           </thead>
